@@ -1,0 +1,4 @@
+FROM jbonachera/arch
+RUN pacman -S --noconfirm npm
+WORKDIR /usr/local/src
+CMD npm install && npm run build
