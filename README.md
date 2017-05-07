@@ -1,27 +1,6 @@
 # homie-ui
 
-> Homie controller UI
+Very basic Homie (https://github.com/marvinroger/homie) javascript interface.
+OTA is supported using a specific method to publish the firmware via mqtt. I will remove that in the future (a allow a user to upload a binary file from the UI), so I won't document the required setup.
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+This project is also for me a way to learn using VueJS, so beware, there be dragons.
