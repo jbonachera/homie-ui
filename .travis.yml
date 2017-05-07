@@ -1,0 +1,18 @@
+sudo: required
+language: c
+services:
+  - docker
+script:
+  - make
+after_success:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  - docker push jbonachera/homie-ui:$TRAVIS_COMMIT;
+  - docker tag jbonachera/homie-ui:$TRAVIS_COMMIT jbonachera/homie-ui:latest
+  - docker push jbonachera/homie-ui:latest
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+
