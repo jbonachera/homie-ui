@@ -17,7 +17,7 @@
         'mqtt_status',
         'count'
       ]),
-      server() {
+      server () {
         const server = this.mqtt_server
         if (server.indexOf('@') > 0) {
           const scheme = server.split('://')[0]
