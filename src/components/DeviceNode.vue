@@ -30,7 +30,7 @@ export default {
     send (property) {
       const payload = this.settables[property]
       const propertyName = property.split(':')[0]
-      console.log(propertyName + ' -> ' + payload)
+      console.log('devices/' + this.device.id + '/' + this.node.name + '/' + propertyName + '/set' + ' -> ' + payload)
       this.$mqtt.publish('devices/' + this.device.id + '/' + this.node.name + '/' + propertyName + '/set', payload)
     }
   },

@@ -3,7 +3,8 @@ import Store from '../store/store'
 
 var prefix = Store.getters.homie_prefix
 const client = mqtt.connect(Store.getters.mqtt_server, {
-  'clean': true
+  'clean': true,
+  wsOptions: { binary: true, perMessageDeflate: false},
 })
 
 client.on('offline', () => {
@@ -28,6 +29,7 @@ client.on('connect', () => {
   client.subscribe(prefix + '+/$homie', {'qos': 1})
 })
 client.on('message', (topic, message, packet) => {
+  console.log('bla')
   Store.commit('INC_COUNT')
   var parts = topic.split('/')
   this.prefix = parts.shift()
